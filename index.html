@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <title> AngularJs</title>
+    </head>
+    <body ng-init="data=[{name:'jony',city:'dhaka'},{name:'ponir',city:'laddi'}]">
+        <div ng-Hide="hide">
+    Name :<input type="text" ng-model="name"/>
+        <br/>{{name}}
+        </div>
+        
+    Hide:<input type="checkbox" ng-model="hide">
+        <button ng-click="name='hafizur'">Fixed Name:</button>
+        <li ng-repeat="person in data">{{person.name}}</li>
+		<p>Total click: {{ clickCounter }}</p></td>
+       <button ng-click="clickCounter = clickCounter + 1">Click Me!</button>
+        <script src="angular.js"></script>
+    </body>
+</html>
