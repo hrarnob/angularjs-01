@@ -1,0 +1,48 @@
+<html>
+    <head>
+    </head>
+    
+    <body >
+        
+        <div ng-app="" ng-controller="studentController">
+           <table border="0">
+               <tr><td>Enter FirstName:</td><td><input type="text"  ng-model="student.firstName"></td></tr>
+                <tr><td>Enter LastName:</td><td><input type="text" ng-model="student.lastName"></td></tr>
+                <tr><td>fullname :</td><td>{{student.fullName()}} </td></tr>
+            </table>
+           <ul>
+		      <li ng-repeat="student in student.subjects">{{student.name +' '+ student.mark}}</li> 
+		   </ul>
+            
+            <script>
+            
+                  function studentController($scope)
+                  {
+                       $scope.student = {
+                           firstName: "HR",
+                           lastName: "Arnob",
+						   subjects:[{name:'cse',mark:70},{name:'te',mark:80}],
+                           fullName: function ()
+                                   {
+                                        var stuObj;
+                                              stuObj =  $scope.student;
+                                     return stuObj.firstName +" " +stuObj.lastName;
+                                  }
+                       };
+                  }
+                                          
+    </script>
+        
+        </div>
+        
+        
+        
+ <script
+src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js">
+</script>
+        
+    </body>
+    
+    
+
+</html>
